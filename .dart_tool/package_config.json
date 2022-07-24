@@ -74,10 +74,28 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///home/pedro/snap/flutter/common/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///home/pedro/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "focus_detector",
       "rootUri": "file:///home/pedro/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/focus_detector-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///home/pedro/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "lints",
@@ -170,7 +188,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-07-21T20:14:00.325536Z",
+  "generated": "2022-07-24T17:09:26.426526Z",
   "generator": "pub",
   "generatorVersion": "2.17.5"
 }

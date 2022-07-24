@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "package:customerglu_plugin/customerglu_plugin.dart";
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,6 +51,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _isRegistered = false;
+
 
 
   static const broadcast_channel = MethodChannel('CUSTOMERGLU_EVENTS');
@@ -72,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   var userData = {
-    'userId': "rioe34918", // Mandatory:any identifier to uniquely identify a user of your platform
+    'userId': "asd123asd", // Mandatory:any identifier to uniquely identify a user of your platform
     'firebaseToken': "FCM_TOKEN_OF_DEVICE", // for enabling Firebase Notifications
     'customAttributes':{ 
     // any custom key-value pairs, which may be used for targeting can be sent as customAttributes
@@ -104,6 +107,46 @@ class _MyHomePageState extends State<MyHomePage> {
 
 void _userRegister() async {
   bool is_registered = await CustomergluPlugin.registerDevice(userData,loadCampaigns: true);
+
+  setState(() {
+    _isRegistered = is_registered;
+  });
+
+  if (is_registered) {
+    Fluttertoast.showToast(
+        msg: "User registered sucessfully",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.green,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+  } else {
+        Fluttertoast.showToast(
+        msg: "Registration failed",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.green,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+  }
+}
+
+void _clearData() {
+  CustomergluPlugin.clearGluData();
+
+      Fluttertoast.showToast(
+        msg: "User data cleared",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.green,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
 }
 
 
@@ -159,7 +202,7 @@ void _userRegister() async {
               margin: EdgeInsets.all(25),  
               child: FlatButton(  
                 child: Text('Clear Glu Data', style: TextStyle(fontSize: 20.0),),  
-                onPressed: () {CustomergluPlugin.clearGluData();},  
+                onPressed: () {_clearData();},  
               ),  
             ),
             Container(
@@ -182,7 +225,7 @@ void _userRegister() async {
                 child: Text('Load campaign by id', style: TextStyle(fontSize: 20.0),),  
                 onPressed: () {CustomergluPlugin.loadCampaignById("2c7004e9-0f1b-45bb-abb4-d738d9f83a09",autoclosewebview: true); _DeepView();},  
               ),  
-            )
+            ),
           ],
         ),
       ),

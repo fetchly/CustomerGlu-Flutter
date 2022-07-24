@@ -1710,6 +1710,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable corner
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -1763,6 +1764,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable progress_bg
 drawable test_custom_background
+drawable toast_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -2370,6 +2372,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toast_custom
 layout web_activity
 mipmap ic_launcher
 plurals mtrl_badge_content_description

@@ -74,18 +74,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _DeepView() {
     broadcast_channel.setMethodCallHandler((call) async {
-  switch (call.method) {
-    case "CUSTOMERGLU_DEEPLINK_EVENT":
-      print("CUSTOMERGLU_DEEPLINK_EVENT");
-      print(call.arguments);
-      break;
-    case "CUSTOMERGLU_ANALYTICS_EVENT":
-      print("CUSTOMERGLU_ANALYTICS_EVENT");
-      print(call.arguments);
+    switch (call.method) {
+      case "CUSTOMERGLU_DEEPLINK_EVENT":
+        print("CUSTOMERGLU_DEEPLINK_EVENT");
+        print(call.arguments);
+        break;
+      case "CUSTOMERGLU_ANALYTICS_EVENT":
+        print("CUSTOMERGLU_ANALYTICS_EVENT");
+        print(call.arguments);
 
       break;
   }
-});
+  });
   }
 
 void _userRegister() async {

@@ -43,7 +43,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <meta-data android:name="CUSTOMERGLU_WRITE_KEY"
-            android:value="QKL0SMSGtV9f88ok0kQKWaDzsbXXicxU30TNX2yl" />
+            android:value="YOUR_WRITE_KEY" />
 
     </application>
 </manifest>

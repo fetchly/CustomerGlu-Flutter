@@ -56,23 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   static const broadcast_channel = MethodChannel('CUSTOMERGLU_EVENTS');
-  // print(broadcast_channel);
-  // broadcast_channel.setMethodCallHandler((call) async ({
-  //   switch (call.method) {
-  //     case "CUSTOMERGLU_DEEPLINK_EVENT":
-  //       print("CUSTOMERGLU_DEEPLINK_EVENT");
-  //       print(call.arguments);
-  //       break;
-  //     case "CUSTOMERGLU_ANALYTICS_EVENT":
-  //       print("CUSTOMERGLU_ANALYTICS_EVENT");
-  //       print(call.arguments);
-
-  //       break;
-  //   }
-  // }));
-
-
-
 
   var userData = {
     'userId': "asd123asd", // Mandatory:any identifier to uniquely identify a user of your platform
@@ -223,7 +206,7 @@ void _clearData() {
               margin: EdgeInsets.all(25),  
               child: FlatButton(  
                 child: Text('Load campaign by id', style: TextStyle(fontSize: 20.0),),  
-                onPressed: () {CustomergluPlugin.loadCampaignById("2c7004e9-0f1b-45bb-abb4-d738d9f83a09",autoclosewebview: true); _DeepView();},  
+                onPressed: () {CustomergluPlugin.loadCampaignById("CAMPAIGN_ID/TAG",autoclosewebview: true); _DeepView();},  
               ),  
             ),
           ],
